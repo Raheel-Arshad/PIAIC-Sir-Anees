@@ -1,0 +1,65 @@
+#----------Variables----------
+subjects = ["English", "Urdu", "Maths", "Physics", "Computer"]
+marks_obtained = []
+grades = []
+total = 0 
+percentage = 0.0
+overall_grade  = ""
+marks = 0
+
+#---------Taking inputs---------
+for i in range(len(subjects)):
+    marks = int(input("Enter your marks of "+subjects[i]+": "))
+    while (marks <=100 and marks >=0) == False:
+        print("Error! Please input number between 0 to 100.")
+        marks = int(input("Enter your marks of "+subjects[i]+": "))
+    marks_obtained.append(marks)
+        
+#---------Calculations---------
+for m in range(len(marks_obtained)):
+    total += marks_obtained[m]    
+    
+percentage = total/500 * 100
+
+for i in range(len(marks_obtained)):
+    if(marks_obtained[i] >= 80 and marks_obtained[i] <= 100):
+        grades.append("A+")
+    elif(marks_obtained[i] >= 70 and marks_obtained[i] <= 79):
+        grades.append("B")
+    elif(marks_obtained[i] >= 60 and marks_obtained[i] <= 69):
+        grades.append("C")
+    elif(marks_obtained[i] >= 50 and marks_obtained[i] <= 59):
+        grades.append("D")
+    elif(marks_obtained[i] >= 40 and marks_obtained[i] <= 49):
+        grades.append("E")
+    else:
+        grades.append("F")
+
+if(percentage >= 80 and percentage <= 100):
+    overall_grade = "A+"
+elif(percentage >= 70 and percentage <= 79):
+    overall_grade = "B"
+elif(percentage >= 60 and percentage <= 69):
+    overall_grade = "C"
+elif(percentage >= 50 and percentage <= 59):
+    overall_grade = "D"
+elif(percentage >= 40 and percentage <= 49):
+    overall_grade = "E"
+else:
+    overall_grade = "F"
+
+#------------Saving Results--------------
+
+with open("marks.txt", "w") as f:
+    f.write("*******************\n")
+    f.write("Subjects\tTotal\tObtained Marks\t\tGrade\n")
+    f.write("*******************\n")
+    for i in range(len(subjects)):
+            f.write(subjects[i]+"\t\t100\t\t"+str(marks_obtained[i])+"\t\t"+str(grades[i])+"\n")
+    f.write("*******************\n")
+    f.write("Total Marks Obtained: "+str(total)+" Out of 500\n")
+    f.write("Percentage: {:.2f}\n".format(percentage))
+    f.write("Overall Grade: "+overall_grade+"\n")
+    f.write("*******************\n")
+
+print("Marksheet Created SuccessFully!")
