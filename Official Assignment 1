@@ -1,0 +1,124 @@
+### 1. Calculate Area Of A Circle
+import math
+radius = float(input("Input Radius: "))
+area = math.pi * (math.pow(radius,2))
+print("Area of Circle with radius",radius," is",area)
+Input Radius: 0.5
+Area of Circle with radius 0.5  is 0.7853981633974483
+In [9]:
+### 2. Check number either positive or negative
+num = float(input("Enter Number: "))
+if num > 0:
+    print("Positive Number Entered")
+elif num == 0:
+    print("Zero Entered")
+else:
+    print("Negative Number Entered")
+Enter Number: -1
+Negative Number Entered
+In [14]:
+### 3. Divisibility Check of two numbers
+num = int(input("Enter Numerator: "))
+den = int(input("Enter Denomenator: "))
+reminder = num % den
+
+if reminder == 0:
+    print("Number",num," is completely divisible by",den)
+else: 
+    print("Number",num," is not completely divisible by",den)
+Enter Numerator: 2
+Enter Denomenator: 1
+Number 2  is completely divisible by 1
+In [35]:
+### 4. Days Calculator
+from datetime import datetime
+start_date = input("Enter a date in (dd/mm/yy) format: ")
+end_date = input("Enter a date in (dd/mm/yy) format: ")
+
+start_datef = datetime.strptime(start_date,"%d/%m/%Y")
+end_datef = datetime.strptime(end_date,"%d/%m/%Y")
+days = start_datef.date() - end_datef.date()
+print("There are",abs(days.days)," days in between",start_date, " and",end_date)
+Enter a date in (dd/mm/yy) format: 12/12/2019
+Enter a date in (dd/mm/yy) format: 16/12/2019
+There are 4  days in between 12/12/2019  and 16/12/2019
+In [39]:
+### 5. Calculate Volume of a Sphere
+import math
+radius = float(input("Enter Radius of Sphere: "))
+volume = ((4/3) * math.pi * (math.pow(radius, 3)))
+print("Volume of the Sphere with Radius", radius, " is", volume)
+Enter Radius of Sphere: 1
+Volume of the Sphere with Radius 1.0  is 4.1887902047863905
+In [41]:
+### 6. Copy string n times
+input_str = input("Enter String: ")
+copies = int(input("How many copies of String you need: "))
+result = input_str * copies
+print(copies, "Copies of", input_str,"are", result)
+Enter String: Hi
+How many copies of String you need: 4
+4 Copies of Hi are HiHiHiHi
+In [44]:
+### 7. Check if number is Even or Odd
+num = int(input("Enter number: "))
+if num % 2 == 0:
+    print(num, "is Even")
+else:
+    print(num, "is Odd")
+Enter number: 4
+4 is Even
+In [71]:
+### 8. Vowel Tester
+vowels = ("a","e","i","o","u")
+letter = input("Enter a character: ")
+flag = False
+
+for vowel in vowels:
+    if letter.lower() == vowel:
+        flag = True
+        break
+
+if flag == True:
+    print("Letter",letter,"is Vowel")
+else:
+    print("Letter",letter,"is not Vowel")
+Enter a character: A
+Letter A is Vowel
+In [74]:
+### 9. Triangle area
+base = int(input("Enter magnitude of Triangle Base: "))
+height = int(input("Enter magnitude of Triangle Height: "))
+area = int((base * height) / 2)
+print("Area of a Triangle with Height",height,"and Base",base,"is",area)
+Enter magnitude of Triangle Base: 4
+Enter magnitude of Triangle Height: 4
+Area of a Triangle with Height 4 and Base 4 is 8
+In [76]:
+### 10. Calculate Interest    A = P (1 + r/n) (nt)
+import math
+P = int(input("Please enter principal amount:"))
+r = float(input("Please Enter Rate of interest in %:"))/100
+t = float(input("Enter number of years for investment:"))
+A = P * math.pow((1 + (r/12)), 12*t)
+
+print("After ",t," years your principal amount ",P," over an interest rate of ",r," % will be",int(A))
+Please enter principal amount:10000
+Please Enter Rate of interest in %:0.1
+Enter number of years for investment:5
+After  5.0  years your principal amount  10000  over an interest rate of  0.001  % will be 10050
+In [13]:
+### 11. Euclidean distance
+x1 = int(input("Enter Co-ordinate for x1:"))
+y1 = int(input("Enter Co-ordinate for y1:"))
+x2 = int(input("Enter Co-ordinate for x2:"))
+y2 = int(input("Enter Co-ordinate for y2:"))
+d = math.sqrt(math.pow((x2-x1), 2) + math.pow((y2-y1), 2))
+print("Distance between points ({0},{1}) and ({2},{3}) is {4}".format(x1, y1, x2, y2, int(d)))
+Enter Co-ordinate for x1:2
+Enter Co-ordinate for y1:4
+Enter Co-ordinate for x2:2
+Enter Co-ordinate for y2:2
+Distance between points (2,4) and (2,2) is 2
+In [1]:
+### 12. Feet to Centimet
